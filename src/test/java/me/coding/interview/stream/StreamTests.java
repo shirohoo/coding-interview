@@ -139,7 +139,7 @@ class StreamTests {
 
         // ...when
         result = transactions.stream()
-            .map(Transaction::getValue)
+            .mapToInt(Transaction::getValue)
             .reduce(Integer.MIN_VALUE, Integer::max);
 
         // ...then
@@ -154,7 +154,7 @@ class StreamTests {
 
         // ...when
         result = transactions.stream()
-            .map(Transaction::getValue)
+            .mapToInt(Transaction::getValue)
             .reduce(Integer.MAX_VALUE, Integer::min);
 
         // ...then

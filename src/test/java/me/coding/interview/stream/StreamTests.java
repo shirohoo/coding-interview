@@ -30,7 +30,10 @@ class StreamTests {
         List<Transaction> result;
 
         // ...when
-        result = null; // put in your codes
+        result = transactions.stream()
+            .filter(transaction -> transaction.getYear() == 2011)
+            .sorted(comparing(Transaction::getYear))
+            .collect(toList());
 
         // ...then
         assertThat(result).containsExactly(
@@ -46,7 +49,11 @@ class StreamTests {
         List<City> result;
 
         // ...when
-        result = null; // put in your codes
+        result = transactions.stream()
+            .map(Transaction::getTrader)
+            .map(Trader::getCity)
+            .distinct()
+            .collect(toList());
 
         // ...then
         assertThat(result).containsExactlyInAnyOrder(City.CAMBRIDGE, City.MILAN);
@@ -59,7 +66,12 @@ class StreamTests {
         List<Trader> result;
 
         // ...when
-        result = null; // put in your codes
+        result = transactions.stream()
+            .map(Transaction::getTrader)
+            .filter(trader -> trader.getCity() == City.CAMBRIDGE)
+            .distinct()
+            .sorted(comparing(Trader::getName))
+            .collect(toList());
 
         // ...then
         assertThat(result).containsExactly(alan, brian, raoul);
@@ -72,7 +84,12 @@ class StreamTests {
         List<String> result;
 
         // ...when
-        result = null; // put in your codes
+        result = transactions.stream()
+            .map(Transaction::getTrader)
+            .distinct()
+            .sorted(comparing(Trader::getName))
+            .map(Trader::getName)
+            .collect(toList());
 
         // ...then
         assertThat(result).containsExactly("Alan", "Brian", "Mario", "Raoul");
@@ -85,7 +102,9 @@ class StreamTests {
         boolean result;
 
         // ...when
-        result = false; // put in your codes
+        result = transactions.stream()
+            .map(Transaction::getTrader)
+            .anyMatch(trader -> trader.getCity() == City.MILAN);
 
         // ...then
         assertThat(result).isTrue();
@@ -98,7 +117,9 @@ class StreamTests {
         List<Transaction> result;
 
         // ...when
-        result = null; // put in your codes
+        result = transactions.stream()
+            .filter(transaction -> transaction.getTrader().getCity() == City.CAMBRIDGE)
+            .collect(toList());
 
         // ...then
         assertThat(result).containsExactlyInAnyOrder(
@@ -116,7 +137,9 @@ class StreamTests {
         int result;
 
         // ...when
-        result = 0; // put in your codes
+        result = transactions.stream()
+            .map(Transaction::getValue)
+            .reduce(Integer.MIN_VALUE, Integer::max);
 
         // ...then
         assertThat(result).isEqualTo(1000);
@@ -129,7 +152,9 @@ class StreamTests {
         int result;
 
         // ...when
-        result = 0; // put in your codes
+        result = transactions.stream()
+            .map(Transaction::getValue)
+            .reduce(Integer.MAX_VALUE, Integer::min);
 
         // ...then
         assertThat(result).isEqualTo(300);

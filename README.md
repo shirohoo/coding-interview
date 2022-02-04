@@ -6,18 +6,18 @@
 
 ✅ 풀이 - solution 브랜치 체크아웃 후 테스트코드 확인
 
-## 디버깅(Debugging)
+## 문자열(String)
 
-... not written yet
+[📜 문제 링크 - 테스트 코드 참고](https://github.com/shirohoo/coding-interview/blob/master/src/test/java/me/coding/interview/string/StringTests.java)
 
 ## 옵셔널(Optional)
 
 ... not written yet
 
-## 문자열(String)
-
-[📜 문제 링크 - 테스트 코드 참고](https://github.com/shirohoo/coding-interview/blob/master/src/test/java/me/coding/interview/string/StringTests.java)
-
 ## 스트림(Stream) 
 
 [📜 문제 링크 - 테스트 코드 참고](https://github.com/shirohoo/coding-interview/blob/master/src/test/java/me/coding/interview/stream/StreamTests.java)
+
+## 디버깅(Debugging)
+
+... not written yet

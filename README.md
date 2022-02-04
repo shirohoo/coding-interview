@@ -2,7 +2,9 @@
 
 ## 스트림(Stream) 
 
-테스트 코드 참고: me/coding/interview/stream/StreamTests.java
+[📜 문제 링크 - 테스트 코드 참고](https://github.com/shirohoo/coding-interview/blob/master/src/test/java/me/coding/interview/stream/StreamTests.java)
+
+✅ 풀이 - stream 브랜치 체크아웃 후 테스트코드 확인
 
 ```java
 package me.coding.interview.stream;

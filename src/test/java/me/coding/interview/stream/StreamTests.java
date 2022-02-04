@@ -1,13 +1,12 @@
 package me.coding.interview.stream;
 
-import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@DisplayName("모든 테스트에 대해 효율성은 고려하지 않습니다")
 class StreamTests {
     final Trader raoul = Trader.of("Raoul", City.CAMBRIDGE);
     final Trader mario = Trader.of("Mario", City.MILAN);
